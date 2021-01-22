@@ -1,0 +1,1 @@
+Rails.application.config.session_store :cookie_store, key: "find_house", domain: "https://find-your-house.herokuapp.com"
