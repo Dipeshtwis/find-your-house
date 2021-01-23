@@ -1,1 +1,5 @@
-Rails.application.config.session_store :cookie_store, key: "find_house", domain: "https://find-your-house.herokuapp.com"
+if Rails.env == "production"
+  Rails.application.config.session_store :cookie_store, key: "_find_house", domain: "https://find-your-house.herokuapp.com"
+else
+  Rails.application.config.session_store :cookie_store, key: "_find_house"
+end
