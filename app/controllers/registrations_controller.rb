@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class RegistrationsController < ApplicationController
   def create
     user = User.create!(
       username: params['user']['username'],
