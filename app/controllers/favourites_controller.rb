@@ -15,7 +15,7 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    user=User.find(params[:user_id])
+    user = User.find(params[:user_id])
     favourite = user.favourites.find(params[:id])
 
     if favourite.destroy
@@ -24,7 +24,8 @@ class FavouritesController < ApplicationController
   end
 
   private
-    def fav_params
-      params.permit(:user_id, :house_id)
-    end
+
+  def fav_params
+    params.permit(:user_id, :house_id)
+  end
 end
