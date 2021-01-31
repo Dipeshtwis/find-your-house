@@ -5,6 +5,5 @@ Rails.application.routes.draw do
   get :logged_in, to: "sessions#logged_in"
   resources :houses
   resources :favourites
-  root to: "pages#index"
-  get '*path', to: 'pages#index', via: :all
+  root to: "static#home"
 end

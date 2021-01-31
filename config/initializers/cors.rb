@@ -6,19 +6,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins "https://find-your-house.herokuapp.com"
-    resource "*", headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head],
-    credentials: true
-  end
-
-  allow do
-    origins "https://homepointr-backend.herokuapp.com"
-    resource "*", headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head],
-    credentials: true
-  end
-
-  allow do
-    origins "https://homepointr.herokuapp.com"
+    origins "https://homepointrdeep.herokuapp.com"
     resource "*", headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head],
     credentials: true
   end
