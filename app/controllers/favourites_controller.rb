@@ -1,8 +1,8 @@
 class FavouritesController < ApplicationController
-  include CurrentUserConcern
+  before_action :current_user
 
   def index
-    render json: @current_user.home
+    render json: current_user.home
   end
 
   def create
@@ -16,7 +16,7 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    favourite = @current_user.favourites.find(params[:id])
+    favourite = current_user.favourites.find(params[:id])
 
     if favourite.destroy
       render json: "we deleted it from  your favourites"
