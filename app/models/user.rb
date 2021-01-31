@@ -6,5 +6,5 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 50 },
                     uniqueness: true
   has_many :favourites
-  has_many :home, through: :favourites, source: 'house'
+  has_many :homes, through: :favourites, source: 'house'
 end

@@ -1,12 +1,11 @@
 class FavouritesController < ApplicationController
   before_action :current_user
-
   def index
-    render json: current_user.home
+    render json: current_user.homes
   end
 
   def create
-    favourite = Favourite.new(fav_params)
+    favourite = Favourite.new(user_id: current_user.id, house_id: params[:house_id])
 
     if favourite.save
       render json: "we added to your favourites"
@@ -21,11 +20,5 @@ class FavouritesController < ApplicationController
     if favourite.destroy
       render json: "we deleted it from  your favourites"
     end
-  end
-
-  private
-
-  def fav_params
-    params.permit(:user_id, :house_id)
   end
 end
