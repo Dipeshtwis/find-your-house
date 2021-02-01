@@ -26,11 +26,11 @@ This project is based on Ruby on Rails for the RESTFUL API which provide the hou
 - Ruby (Version: 2.7.1)
 - Postgresql (version: 12)
 - Rack Cors
-- RESTful API
+- RESTFUL API
 
 ## Live Demo Link <a name = "ll"></a>
 
-[Live Demo]()
+[Live Demo](https://homepointr-backend.herokuapp.com/)
 
 
 ## Getting Started <a name = "gs"></a>
