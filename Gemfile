@@ -52,6 +52,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+gem 'figaro'
 gem 'hirb'
 gem 'jwt'
 gem 'rack-cors', require: 'rack/cors'
