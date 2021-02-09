@@ -5,13 +5,9 @@ class SessionsController < ApplicationController
     if user &.try(:authenticate, params['password'])
       data = user.attributes
       token = JsonWebToken.encode(data)
-      render json: {
-        token: token
-      }
+      render json: { token: token }, status: 200
     else
-      render json: {
-        error: 'wrong credentials'
-      }
+      render json: { error: 'wrong credentials' }
     end
   end
 

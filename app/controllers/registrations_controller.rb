@@ -4,13 +4,9 @@ class RegistrationsController < ApplicationController
 
     if user.save
       token = JsonWebToken.encode(user.attributes)
-      render json: {
-        token: token
-      }
+      render json: { token: token }, status: 201
     else
-      render json: {
-        error: user.errors.full_messages
-      }
+      render json: { error: user.errors.full_messages }
     end
   end
 
