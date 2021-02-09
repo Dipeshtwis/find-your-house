@@ -8,7 +8,7 @@ class FavouritesController < ApplicationController
     favourite = Favourite.new(user_id: current_user.id, house_id: params[:house_id])
 
     if favourite.save
-      render json: { favourite: 'we added to your favourites'}, status: 201
+      render json: { favourite: 'we added to your favourites' }, status: 201
     else
       render json: { error: favourite.errors.full_messages }
     end
