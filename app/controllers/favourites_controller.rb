@@ -1,7 +1,7 @@
 class FavouritesController < ApplicationController
   before_action :current_user
   def index
-    render json: current_user.homes
+    render json: current_user.homes, status: :ok
   end
 
   def create
@@ -10,13 +10,7 @@ class FavouritesController < ApplicationController
     if favourite.save
       render json: { favourite: 'we added to your favourites' }, status: 201
     else
-      render json: { error: favourite.errors.full_messages }
+      render json: { error: favourite.errors.full_messages }, status: 401
     end
-  end
-
-  def destroy
-    favourite = current_user.favourites.find(params[:id])
-
-    render json: 'we deleted it from  your favourites' if favourite.destroy
   end
 end

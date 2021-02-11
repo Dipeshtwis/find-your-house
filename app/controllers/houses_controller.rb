@@ -3,14 +3,14 @@ class HousesController < ApplicationController
     houses = House.new(house_params)
 
     if houses.save
-      render json: houses
+      render json: houses, status: 201
     else
-      render json: houses.errors.full_message
+      render json: { error: houses.errors.full_message }, status: 401
     end
   end
 
   def index
-    render json: House.all
+    render json: House.all, status: :ok
   end
 
   def show
