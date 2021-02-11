@@ -15,7 +15,11 @@ class HousesController < ApplicationController
 
   def show
     house = House.find(params[:id])
-    render json: house if house
+    if house
+      render json: house, status: :ok
+    else
+      render json: { error: "No house with this id" }, status: 422
+    end
   end
 
   private
