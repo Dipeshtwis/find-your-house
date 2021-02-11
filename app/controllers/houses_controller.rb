@@ -18,7 +18,7 @@ class HousesController < ApplicationController
     if house
       render json: house, status: :ok
     else
-      render json: { error: "No house with this id" }, status: 422
+      render json: { error: 'No house with this id' }, status: 422
     end
   end
 
