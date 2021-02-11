@@ -6,5 +6,7 @@ class CreateFavourites < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_foreign_key :favourites, :users
+    add_foreign_key :favourites, :houses 
   end
 end
