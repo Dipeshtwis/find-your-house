@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
       token = JsonWebToken.encode(user.attributes)
       render json: { token: token }, status: 201
     else
-      render json: { error: user.errors.full_messages }
+      render json: { error: user.errors.full_messages }, status: 401
     end
   end
 

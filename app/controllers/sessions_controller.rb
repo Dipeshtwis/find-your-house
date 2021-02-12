@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       token = JsonWebToken.encode(data)
       render json: { token: token }, status: 200
     else
-      render json: { error: 'wrong credentials' }
+      render json: { error: 'wrong credentials' }, status: 401
     end
   end
 
